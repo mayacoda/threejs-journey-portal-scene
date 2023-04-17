@@ -16,7 +16,7 @@ export class Fireflies extends Points implements GameEntity {
     super()
 
     const firefliesGeometry = new BufferGeometry()
-    const count = 40
+    const count = 60
     const positions = new Float32Array(count * 3)
     for (let i = 0; i < count; i++) {
       positions[i * 3] = (Math.random() - 0.5) * 4

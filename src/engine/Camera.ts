@@ -14,13 +14,14 @@ export class Camera implements GameEntity {
 
   private initCamera() {
     this.instance = new THREE.PerspectiveCamera(
-      75,
+      30,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
     )
-    this.instance.position.z = 5
-    this.instance.position.y = 2
+    this.instance.position.z = 6
+    this.instance.position.y = 3
+    this.instance.position.x = -3
     this.engine.scene.add(this.instance)
   }
 

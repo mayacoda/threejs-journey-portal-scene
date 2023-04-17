@@ -7,7 +7,7 @@ new Engine({
   experience: PortalScene,
   info: {
     twitter: 'https://twitter.com/maya_ndljk',
-    github: 'https://github.com/mayacoda/portal-scene',
+    github: 'https://github.com/mayacoda/threejs-journey-portal-scene',
     description: 'Chapter 06 of Three.js Journey',
     documentTitle: 'Portal Scene',
     title: 'Portal scene',
