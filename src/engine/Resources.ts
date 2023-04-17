@@ -60,7 +60,7 @@ export class Resources extends EventEmitter {
     return item
   }
 
-  load() {
+  private load() {
     if (this.resources.length === 0) {
       setTimeout(() => {
         this.emit('loaded')
