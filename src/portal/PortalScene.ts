@@ -9,8 +9,8 @@ export class PortalScene implements Experience {
   debugObject = {
     clearColor: 0x0b3231,
   }
-  fireflies: Fireflies
-  portalMaterial: PortalMaterial
+  fireflies!: Fireflies
+  portalMaterial!: PortalMaterial
 
   constructor(private engine: Engine) {}
 
@@ -34,17 +34,18 @@ export class PortalScene implements Experience {
     bakedTexture.flipY = false
     bakedTexture.encoding = sRGBEncoding
 
-    gltf.scene.children.find((child) => child.name === 'baked').material =
+    gltf.scene.children.find((child: Mesh) => child.name === 'baked').material =
       new MeshBasicMaterial({ map: bakedTexture })
 
     const lightMaterial = new MeshBasicMaterial({ color: 0xffffe5 })
     gltf.scene.children
-      .filter((child) => child.name.startsWith('poleLight'))
+      .filter((child: Mesh) => child.name.startsWith('poleLight'))
       .forEach((child: Mesh) => (child.material = lightMaterial))
 
     this.portalMaterial = new PortalMaterial()
-    gltf.scene.children.find((child) => child.name === 'portalLight').material =
-      this.portalMaterial
+    gltf.scene.children.find(
+      (child: Mesh) => child.name === 'portalLight'
+    ).material = this.portalMaterial
 
     this.engine.scene.add(gltf.scene)
 
